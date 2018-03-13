@@ -20,7 +20,7 @@ steps_daily <- tapply(data$steps, data$date, FUN = sum, na.rm=TRUE)
 hist(steps_daily, col = 3, ylab = "Frequency", xlab = "Steps each day", main = "Total number of steps per day", freq = TRUE, breaks = 20)
 ```
 
-![plot of chunk unnamed-chunk-65](figure/unnamed-chunk-65-1.png)
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
@@ -48,7 +48,7 @@ steps_interval <- tapply(data$steps, data$interval, mean, na.rm=TRUE)
 plot(names(steps_interval), steps_interval, type = "l", xlab = "5 min intervals", ylab = "Average number of steps", main = "Daily activity")
 ```
 
-![plot of chunk unnamed-chunk-67](figure/unnamed-chunk-67-1.png)
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 ### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -84,7 +84,7 @@ steps_daily_new <- tapply(data_new$steps, data_new$date, FUN = sum, na.rm=TRUE)
 hist(steps_daily_new, col = 3, ylab = "Frequency", xlab = "Steps each day", main = "Total number of steps per day", freq = TRUE, breaks = 20)
 ```
 
-![plot of chunk unnamed-chunk-71](figure/unnamed-chunk-71-1.png)
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
 
 ```r
 steps_daily_mean_new <- mean(steps_daily_new, na.rm = TRUE)
@@ -117,4 +117,4 @@ data_new_day <- aggregate(steps ~ interval + day, data=data_new, mean)
 ggplot(data_new_day, aes(interval, steps))+geom_line()+facet_grid(day ~ .)+xlab("5 min intervals")+ylab("Average number of steps")
 ```
 
-![plot of chunk unnamed-chunk-73](figure/unnamed-chunk-73-1.png)
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
